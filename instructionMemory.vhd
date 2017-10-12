@@ -41,7 +41,7 @@ architecture arqInstructionMemory of instructionMemory is
 
 	type rom_type is array (0 to 63) of std_logic_vector (31 downto 0);
 		
-   signal instructions : rom_type:= (X"A0100010", X"0010000F", X"A010100F", X"A010101A", X"A1110101", X"A110110B",
+   signal instructions : rom_type:= (X"A0102005", X"A2102003", X"A410201D", X"A010101A", X"A1110101", X"A110110B",
                              X"A010000F", X"A010000F", X"A010000F", X"A010000F", X"A010000F", X"A010000F",
                              X"A010000F", X"A010000F", X"A010000F", X"A010000F", X"A010000F", X"A010000F",
                              X"A010000F", X"A010000F", X"A010000F", X"A010000F", X"A010000F", X"A010000F",
