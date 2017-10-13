@@ -52,27 +52,27 @@ BEGIN
       -- hold reset state for 100 ns.
       op1 <= x"0000000F";
 		op2 <= x"0000008F";
-	   aluop <= "000000";--AND
+	   aluop <= "000001";--AND
 		wait for 20 ns;
 			
 		op1 <= x"0000000F";
 		op2 <= x"000000AF";
-		aluop <= "000001";--OR
+		aluop <= "000010";--OR
 		wait for 20 ns;
 		
 		op1 <= x"00000009";
 		op2 <= x"00000005";
-		aluop <= "000001";--ADD
+		aluop <= "000000";--ADD
 		wait for 20 ns;
 		
 		op1 <= x"00000009";
 		op2 <= x"00000005";
-		aluop <= "001000";--SUB
+		aluop <= "000101";--SUB
 		wait for 20 ns;
 		
 		op1 <= x"00000005";
 		op2 <= x"00000009";
-		aluop <= "001000";--SUB
+		aluop <= "000101";--SUB
 		wait for 20 ns;
 
 
