@@ -50,7 +50,7 @@ begin
 				when "000001" =>--	And
 					result <= "000001";
 			
-				when "000100" =>--	Sub
+				when "000101" =>--	Sub
 					result <= "000101";
 			
 				when "000010" =>--	OR
@@ -59,9 +59,15 @@ begin
 				when "000011" =>--	xor
 					result <= "000011";
 				
-				
-				when "000111" => --	xnor
+				when "000111"=>--nor
+					result<= "000111";
+					
+				when "000110"=>--Nand
+					result<="000110";
+					
+				when "000100" => --	xnor
 					result <= "000100";
+					
 				when others => result <= "111111";
 				end case;
 				
