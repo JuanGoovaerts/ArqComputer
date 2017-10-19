@@ -5,7 +5,6 @@ use IEEE.STD_LOGIC_arith.ALL;
 use IEEE.NUMERIC_STD.ALL;
 use IEEE.STD_LOGIC_SIGNED.ALL;
 
-
 entity alu is
     Port ( op1 : in  STD_LOGIC_VECTOR (31 downto 0);
            op2 : in  STD_LOGIC_VECTOR (31 downto 0);
@@ -23,9 +22,9 @@ begin
 		----------------------------------------------------------------
 		-----------------------PRIMER PROCESADOR------------------------
 		----------------------------------------------------------------
-                        when "000000" => -- add 
+						when "000000" => -- add 
 								result <= op1 + op2;
-                        when "000001" =>--AND
+                  when "000001" =>--AND
 								result <= op1 and op2;
 						when "000010" =>--OR
 								result <= op1 or op2;
@@ -39,7 +38,13 @@ begin
 								result<=op1 and not (op2);
 						when "000110"=>--NOR
 								result<= op1 or not op2;
-
+		-----------------------------------------------------------------
+		-----------------------------LOS SLL Y SLR------------------------------
+		-----------------------------------------------------------------			
+						when "100101"=> --SLL
+								result<=	to_stdlogicvector(to_bitvector(op1) SLL conv_integer(op2));
+						when "100110"=> --SLR
+								result<= to_stdlogicvector(to_bitvector(op1) SRL conv_integer(op2));
 		-----------------------------------------------------------------
 		-----------------------------LOS CC------------------------------
 		-----------------------------------------------------------------
@@ -64,7 +69,7 @@ begin
 		-----------------------------------------------------------------
 				        when "111100" => -- save
 		                        result <= op1 + op2;
-		                when "111101" => -- restore
+		              when "111101" => -- restore
 		                        result <= op1 + op2;
 		-----------------------------------------------------------------
 		-----------------------------WITH CARRY--------------------------
